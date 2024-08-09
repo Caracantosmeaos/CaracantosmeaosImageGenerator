@@ -5,4 +5,4 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-CMD ["node", "-r", "ts-node/register/transpile-only", "-r", "tsconfig-paths/register", "dist/app.js"]
+CMD ["node", "dist/index.js"]
