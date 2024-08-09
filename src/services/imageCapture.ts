@@ -3,7 +3,10 @@ import fs from "fs"
 
 const captureImage = async (url:string, filename:string, selector?: string, width?:number, height?:number) => {
     try{
-        const browser:Browser = await puppeteer.launch()
+        const browser:Browser = await puppeteer.launch({
+            ignoreDefaultArgs: ['--disable-extensions'],
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+        })
         const page:Page = await browser.newPage()
     
         await page.goto(url, {

@@ -5,6 +5,7 @@ import path from "path"
 const router = Router()
 
 router.get("/:id", async function (req: Request, res: Response){
+    console.log("Request recieved from "+req.ip)
     const id = req.params.id
     await getMatchImage(id)
     res.set("Content-Type", "image/jpeg")
