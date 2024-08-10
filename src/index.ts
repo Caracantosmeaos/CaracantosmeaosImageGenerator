@@ -14,5 +14,6 @@ app.use(express.urlencoded({extended: true}))
 import matchRouter from './routes/match.route'
 app.use("/matchsummary", matchRouter)
 
-app.listen(PORT, '0.0.0.0')
+const server = app.listen(PORT, '0.0.0.0')
+server.setTimeout(500000);
 console.log("Listening on port "+PORT)

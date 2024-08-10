@@ -22,7 +22,7 @@ const captureImage = async (url:string, filename:string, selector?: string, widt
         else{
             await page.waitForSelector(selector)
             const elem = await page.$(selector)
-            if(elem)img = await elem.screenshot({type: "jpeg", fullPage: false, path: path, quality: 90})
+            if(elem)img = await elem.screenshot({type: "jpeg", fullPage: false, path: path, quality: 100})
             else throw new Error(`Element with selector '${selector}' does not exists in the page`)
         }
         return img
