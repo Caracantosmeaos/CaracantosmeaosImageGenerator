@@ -13,6 +13,9 @@ const captureImage = async (url:string, filename:string, selector?: string, widt
             waitUntil: 'networkidle0'
         })
         await page.setViewport({width: width ?? 1280, height: height ?? 720, deviceScaleFactor: 1})
+        await page.emulateMediaFeatures([
+            {name: 'prefers-color-scheme', value: 'dark'},
+        ]);
         const path = `./imagescache/${filename}.jpeg`
     
         fs.mkdirSync('./imagescache/', {recursive: true})
