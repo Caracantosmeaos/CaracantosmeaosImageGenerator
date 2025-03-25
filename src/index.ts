@@ -13,6 +13,8 @@ app.use(express.urlencoded({extended: true}))
 /**RUTAS */
 import matchRouter from './routes/match.route'
 app.use("/matchsummary", matchRouter)
+import achievementRouter from './routes/achievement.route'
+app.use("/playerachievement", achievementRouter)
 
 const server = app.listen(PORT, '0.0.0.0')
 server.setTimeout(500000);
